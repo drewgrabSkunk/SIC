@@ -1,0 +1,18 @@
+{
+    "contents" : "yahoo.url.builder <- function(ticker) {\n  URL.start <- \"http://ichart.yahoo.com/table.csv?s=\"\n  \n  date.in.start <- \"2000-01-01\"\n  date.split.start <- unlist(strsplit(date.in.start, \"-\"))\n  month.in.start <- as.numeric(date.split.start[2]) - 1\n  a <- paste(\"&a=\", month.in.start, sep = \"\")\n  b <- paste(\"&b=\", as.numeric(date.split.start[3]), sep = \"\")\n  c <- paste(\"&c=\", date.split.start[1], sep = \"\")\n  \n  date.in.end <- as.character(Sys.Date())\n  date.split.end <- unlist(strsplit(date.in.end, \"-\"))\n  month.in.end <- as.numeric(date.split.end[2]) - 1\n  d <- paste(\"&d=\", month.in.end, sep = \"\")\n  e <- paste(\"&e=\", as.numeric(date.split.end[3]), sep = \"\")\n  f <- paste(\"&f=\", date.split.end[1], sep = \"\")\n  \n  #interval <- readline(\"What is the time interval: d, w, m ?     \")\n  #g <- paste(\"&g=\", interval, \"&ignore=.csv\", sep = \"\")\n  g = \"d\"\n  \n  URL <- paste(URL.start, ticker, a, b, c, d, e, f, g, sep = \"\")\n  \n  return(URL)\n  \n}",
+    "created" : 1442524383235.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1166916068",
+    "id" : "51E02481",
+    "lastKnownWriteTime" : 1444844777,
+    "path" : "//fileserver/Company/DA&DS/R Information/Drew R Playground/yahooURLbuilderfunction.R",
+    "project_path" : "yahooURLbuilderfunction.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : true,
+    "type" : "r_source"
+}
